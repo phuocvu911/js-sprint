@@ -1,4 +1,4 @@
-var someBool = true
-var someNumber = 99
-var someUndefined 
-var someString = 'Hiver9'
+let someBool = true
+let someNumber = 99
+let someUndefined 
+let someString = 'Hiver9'
