@@ -1,6 +1,6 @@
 const person = {
     isMarried: true,
     age: 28,
-    middleName: null,
+    middleName:,
     firstName: "Vu"
 }
