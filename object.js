@@ -1,6 +1,6 @@
-const person{
+const person = {
     isMarried: true,
     age: 28,
-    middleName:,
+    middleName: null,
     firstName: "Vu"
 }
