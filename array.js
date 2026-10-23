@@ -1,2 +1,2 @@
-let homogeneousArray = Array[1,2,3]
-let heterogeneousArray = Array['hi', 2, true]
+const homogeneousArray = [1,2,3]
+const heterogeneousArray = ['hi', 2, true]
