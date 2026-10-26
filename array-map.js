@@ -4,7 +4,7 @@ function convert2DArrayToObjectArray(arr) {
 
 function convertArrayOfObjectsToStrings(arr) {
   return arr.map(
-    ({ name, age, city }) => `Name: ${name}, Age: ${age}, City: ${city}`,
+    (a) => `Name: ${a.name}, Age: ${a.age}, City: ${a.city}`,
   )
 }
 
