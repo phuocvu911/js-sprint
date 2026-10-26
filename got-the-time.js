@@ -8,6 +8,7 @@ function printPrettyDate(date) {
   const seconds = date.getSeconds()
   let noon = "AM"
   if (hours > 12) {
+    hours -= 12
     noon = "PM"
   }
   console.log(
