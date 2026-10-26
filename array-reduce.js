@@ -3,6 +3,9 @@ function getTotalFromShoppingBasket(arr) {
 }
 
 function getAverageAge(people) {
+  if (people.length === 0) {
+    return 0
+  }
   const totalAge = people.reduce((a, c) => a + c.age, 0)
   return totalAge / people.length
 }
@@ -16,4 +19,3 @@ function concatenateObjects(arr) {
     return result
   }, {})
 }
-
