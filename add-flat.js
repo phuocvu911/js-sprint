@@ -8,4 +8,3 @@ function sumNestedArray(arr) {
   }
   return res
 }
-
