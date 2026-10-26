@@ -10,13 +10,6 @@ function convertArrayOfObjectsToStrings(arr) {
   )
 }
 
-const objects = [
-  { name: "Alice", age: 30, city: "New York" },
-  { name: "Bob", age: 25, city: "Los Angeles" },
-]
-
-console.log(convertArrayOfObjectsToStrings(objects))
-
 function concatenateStrings(arr, num) {
   return arr.map((str) => (str.length > num ? str.slice(0, num) + "..." : str))
 }
