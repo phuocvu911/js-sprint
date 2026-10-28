@@ -5,6 +5,7 @@ function initializeChessboard() {
   chessboard.className = "chessboard"
 
   let lastClickedSquare
+  let lastColor
 
   for (let row = 1; row <= 8; row++) {
     for (let col = 1; col <= 8; col++) {
@@ -22,24 +23,21 @@ function initializeChessboard() {
       square.addEventListener("click", function () {
         // Revert previously clicked square to its original color
         if (lastClickedSquare) {
-          const lastRow = parseInt(lastClickedSquare.id.split("-")[1])
-          const lastCol = parseInt(lastClickedSquare.id.split("-")[2])
-          if ((lastRow + lastCol) % 2 === 0) {
-            lastClickedSquare.style.backgroundColor = "white"
-          } else {
-            lastClickedSquare.style.backgroundColor = "black"
-          }
+          lastClickedSquare.style.backgroundColor = lastColor
         }
 
         // Change current square to red
+        lastColor = square.style.backgroundColor
         square.style.backgroundColor = "red"
         lastClickedSquare = square
       })
 
+      //add square div into chessboard div
       chessboard.append(square)
     }
   }
 
+  //add chessboard div into body
   body.append(chessboard)
 }
 
