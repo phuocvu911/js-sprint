@@ -26,3 +26,5 @@ function initializeChessboard() {
 
   document.body.appendChild(board)
 }
+
+initializeChessboard()
