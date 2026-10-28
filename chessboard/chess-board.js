@@ -1,40 +1,28 @@
-const body = document.body
-
 function initializeChessboard() {
-  const chessboard = document.createElement("div")
-  chessboard.className = "chessboard"
+  const board = document.createElement("div")
+  board.className = "chessboard"
 
-  let lastClickedSquare
+  let selected = null
 
   for (let row = 1; row <= 8; row++) {
     for (let col = 1; col <= 8; col++) {
       const square = document.createElement("div")
-      square.className = "square"
-      square.id = `square-${row}-${col}`
-
-      const color = (row + col) % 2 === 0 ? "white" : "red"
-      square.style.backgroundColor = color
-      square.dataset.originalColor = color
-
-      // Add click event listener, inside a loop so every square listening independently
-      square.addEventListener("click", function () {
-        //revert previously clicked square to its original color
-        if (lastClickedSquare) {
-          lastClickedSquare.style.backgroundColor = lastClickedSquare.dataset.originalColor
-        }
-
-        //change current square to red
-        square.style.backgroundColor = "red"
-        lastClickedSquare = square
-      })
-
-      //add square div into chessboard div
-      chessboard.append(square)
+      square.className = "square " + ((row + col) % 2 === 0 ? "white" : "black")
+      square.id = "square-" + row + "-" + col
+      board.appendChild(square)
     }
   }
 
-  //add chessboard div into body
-  body.append(chessboard)
-}
+  board.addEventListener("click", (event) => {
+    const square = event.target.closest(".square")
+    if (!square) return
 
-initializeChessboard()
+    if (selected) {
+      selected.style.backgroundColor = ""
+    }
+    square.style.backgroundColor = "red"
+    selected = square
+  })
+
+  document.body.appendChild(board)
+}

@@ -1,13 +1,28 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .chessboard {
   display: grid;
-  grid-template-columns: repeat(8, 50px);
-  grid-template-rows: repeat(8, 50px);
-  gap: 0;
-  width: 400px;
-  height: 400px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 480px;
+  height: 480px;
+  border: 2px solid black;
 }
 
 .square {
-  width: 50px;
-  height: 50px;
+  cursor: pointer;
+}
+
+.white {
+  background-color: white;
+}
+
+.black {
+  background-color: black;
 }
