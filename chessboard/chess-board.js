@@ -9,18 +9,20 @@ function initializeChessboard() {
       const square = document.createElement("div")
       square.className = "square " + ((row + col) % 2 === 0 ? "white" : "black")
       square.id = "square-" + row + "-" + col
-      board.appendChild(square)
+      board.append(square)
     }
   }
 
   board.addEventListener("click", (event) => {
-    const square = event.target.closest(".square")
+    const square = event.target
     if (!square) return
 
+    //revert the last selected square
     if (selected) {
       selected.style.backgroundColor = ""
     }
 
+    //deselect red
     if (selected === square) {
       selected = null
       return
@@ -30,7 +32,7 @@ function initializeChessboard() {
     selected = square
   })
 
-  document.body.appendChild(board)
+  document.body.append(board)
 }
 
 initializeChessboard()
