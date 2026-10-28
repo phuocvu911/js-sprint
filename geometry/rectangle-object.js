@@ -1,4 +1,4 @@
-export const rectObj = {
+export let rectObj = {
   width: 50,
   height: 30,
   area() {
