@@ -21,12 +21,12 @@ function initializeChessboard() {
 
       // Add click event listener, inside a loop so every square listening independently
       square.addEventListener("click", function () {
-        // Revert previously clicked square to its original color
+        //revert previously clicked square to its original color
         if (lastClickedSquare) {
           lastClickedSquare.style.backgroundColor = lastColor
         }
 
-        // Change current square to red
+        //change current square to red
         lastColor = square.style.backgroundColor
         square.style.backgroundColor = "red"
         lastClickedSquare = square
