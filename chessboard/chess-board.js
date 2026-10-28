@@ -20,6 +20,12 @@ function initializeChessboard() {
     if (selected) {
       selected.style.backgroundColor = ""
     }
+
+    if (selected === square) {
+      selected = null
+      return
+    }
+
     square.style.backgroundColor = "red"
     selected = square
   })
