@@ -4,9 +4,9 @@ function convert2DArrayToObjectArray(arr) {
 
 function convertArrayOfObjectsToStrings(arr) {
   return arr.map((o) =>
-    Object.entries(o).map(
-      ([key, val]) => `${key[0].toUpperCase()}${key.slice(1)}: ${val}`,
-    ).join(', '),
+    Object.entries(o)
+      .map(([key, val]) => `${key[0].toUpperCase()}${key.slice(1)}: ${val}`)
+      .join(", "),
   )
 }
 
