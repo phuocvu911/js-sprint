@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letterCon {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  max-width: 520px;
+  border: 1px solid black;
+}
+
+.letter {
+  cursor: pointer;
+}
