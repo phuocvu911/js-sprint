@@ -1,18 +1,26 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.letterCon {
+.letter-container {
   display: grid;
   grid-template-columns: repeat(13, 1fr);
   max-width: 520px;
   border: 1px solid black;
+  gap: 8px;
 }
 
 .letter {
-  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+  max-width: 40px;
+  font-size: 14px;
+}
+
+.letter.selected {
+  font-weight: bold;
+  background-color: darksalmon;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
 }
