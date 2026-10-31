@@ -6,10 +6,9 @@ inside.className = "zone inside"
 
 document.body.append(outside, inside)
 
-const characters = []
 let currentCharacter = null
-let pointerX = window.innerWidth / 2
-let pointerY = window.innerHeight / 2
+let pointerX
+let pointerY
 
 function placeAt(character, x, y) {
   character.style.left = `${x}px`
@@ -32,8 +31,10 @@ document.addEventListener("mousemove", (event) => {
 
   if (!currentCharacter) return
 
+  //get jail area coordinates, put it inside func so it refreshed when resize the window
   const rect = inside.getBoundingClientRect()
 
+  //if mouse move from jail to free
   if (currentCharacter.classList.contains("trapped")) {
     if (!isInJail(pointerX, pointerY, rect)) {
       const halfWidth = currentCharacter.offsetWidth / 2
@@ -57,6 +58,7 @@ document.addEventListener("mousemove", (event) => {
     return
   }
 
+  // from free to jail
   placeAt(currentCharacter, pointerX, pointerY)
 
   if (isInJail(pointerX, pointerY, rect)) {
@@ -67,13 +69,16 @@ document.addEventListener("mousemove", (event) => {
 document.addEventListener("keydown", (event) => {
   if (!(event instanceof globalThis.KeyboardEvent)) return
 
+  //press escape wipe the screen, ie remove charater class
   if (event.key === "Escape") {
-    characters.forEach((character) => character.remove())
-    characters.length = 0
+    document
+      .querySelectorAll(".character")
+      .forEach((character) => character.remove())
     currentCharacter = null
     return
   }
 
+  //only track lowercase
   if (!/^[a-z]$/.test(event.key)) return
 
   if (currentCharacter) {
