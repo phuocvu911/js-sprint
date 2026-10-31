@@ -90,7 +90,6 @@ document.addEventListener("keydown", (event) => {
   character.textContent = event.key
   placeAt(character, pointerX, pointerY)
   document.body.append(character)
-  characters.push(character)
   currentCharacter = character
 
   const rect = inside.getBoundingClientRect()
