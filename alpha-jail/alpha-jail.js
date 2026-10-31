@@ -24,7 +24,9 @@ function trap(character) {
   character.classList.add("trapped")
 }
 
-document.addEventListener("pointermove", (event) => {
+document.addEventListener("mousemove", (event) => {
+  if (!(event instanceof globalThis.MouseEvent)) return
+
   pointerX = event.clientX
   pointerY = event.clientY
 
@@ -63,6 +65,8 @@ document.addEventListener("pointermove", (event) => {
 })
 
 document.addEventListener("keydown", (event) => {
+  if (!(event instanceof globalThis.KeyboardEvent)) return
+
   if (event.key === "Escape") {
     characters.forEach((character) => character.remove())
     characters.length = 0
