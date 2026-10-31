@@ -17,19 +17,19 @@ function createButton(id, label, onClick) {
 }
 
 createButton("bold", "B", () => {
-  document.querySelector('p').classList.toggle("bold")
+  document.querySelector("p").classList.toggle("bold")
 })
 
 createButton("italic", "I", () => {
-  document.querySelector('p').classList.toggle("italic")
+  document.querySelector("p").classList.toggle("italic")
 })
 
 createButton("underline", "U", () => {
-  document.querySelector('p').classList.toggle("underline")
+  document.querySelector("p").classList.toggle("underline")
 })
 
 createButton("highlight", "Highlight", () => {
-  document.querySelector('p').classList.toggle("highlight")
+  document.querySelector("div").classList.toggle("highlight")
 })
 
 document.body.append(content, control)
